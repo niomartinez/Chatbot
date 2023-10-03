@@ -1,0 +1,61 @@
+$breakpoints: (
+    xxs: 320px,
+    xs: 480px,
+    sm: 600px,
+    md: 801px,
+    lg: 1025px,
+    hg: 1280px,
+    hhg: 1920px
+);
+
+@mixin font($type: regular) {
+    @if $type ==regular {
+        font-family: 'NunitoSans Regular';
+    }
+
+    @else if $type ==medium {
+        font-family: 'NunitoSans Medium';
+    }
+
+    @else if $type ==bold {
+        font-family: 'NunitoSans Bold';
+    }
+
+    @else if $type ==semibold {
+        font-family: 'NunitoSans SemiBold';
+    }
+
+    @else {
+        font-family: 'NunitoSans Regular';
+    }
+}
+
+@mixin respond-below($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+        @media (max-width: $breakpoint-value) {
+            @content;
+        }
+    }
+
+    @else {
+        @media (max-width: $breakpoint) {
+            @content;
+        }
+    }
+}
+
+@mixin customScroll {
+    &::-webkit-scrollbar {
+        width: 0.4em;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #686767;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(18, 18, 18, 0.1);
+    }
+}

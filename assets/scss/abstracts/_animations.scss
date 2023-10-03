@@ -1,0 +1,16 @@
+@keyframes typing {
+    0% {
+        transform: translateY(0px);
+        background-color: rgba(37, 55, 84, 0.7);
+    }
+
+    28% {
+        transform: translateY(-7px);
+        background-color: rgba(37, 55, 84, 0.4);
+    }
+
+    44% {
+        transform: translateY(0px);
+        background-color: rgba(37, 55, 84, 0.2);
+    }
+}
